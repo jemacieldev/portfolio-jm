@@ -1,0 +1,31 @@
+name: Atualizar pins do Pinterest
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install feedparser
+
+      - run: python atualizar_pins.py
+
+      - name: Salvar se algo mudou
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add pins.json
+          git diff --cached --quiet || git commit -m "Atualiza pins do Pinterest"
+          git push
