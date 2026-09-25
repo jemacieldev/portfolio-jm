@@ -161,9 +161,36 @@ dialog.lb .fechar{position:absolute;top:-16px;right:-8px;width:40px;height:40px;
 blockquote{max-width:18ch;margin:72px auto 0;font-family:var(--display);font-weight:700;font-stretch:108%;font-size:clamp(26px,3.6vw,48px);line-height:1.05;letter-spacing:-.048em}
 
 /* ============ CONTATO ============ */
-.mail{display:inline-block;font-family:var(--display);font-weight:800;font-stretch:108%;font-size:clamp(24px,5vw,78px);letter-spacing:-.052em;line-height:1;text-decoration:none;margin:36px 0;word-break:break-word;
-  background:linear-gradient(var(--lime),var(--lime)) no-repeat 0 90%/0% 30%;transition:background-size .6s var(--ease)}
-.mail:hover{background-size:100% 30%}
+#contato{position:relative;min-height:32vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(28px,5vh,48px);padding-top:0}
+.fluido{
+  background:linear-gradient(100deg,var(--ink) 10%,var(--lilac) 32%,var(--ice) 48%,var(--lime) 62%,var(--ink) 84%);
+  background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:escoar 9s ease-in-out infinite;
+}
+@keyframes escoar{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@media (prefers-reduced-motion:reduce){.fluido{animation:none;background-position:0% 50%}}
+.estrelas{position:absolute;inset:0;pointer-events:none;overflow:hidden;max-width:900px;margin:0 auto}
+.estrela{position:absolute;font-size:clamp(18px,2.6vw,34px);color:var(--lilac);animation:brilha 3.4s ease-in-out infinite}
+.estrela.e2{color:var(--ice);animation-delay:.7s}
+.estrela.e3{color:var(--lime);animation-delay:1.5s}
+.estrela.e4{color:var(--ice);animation-delay:2.2s}
+.e1{top:6%;left:10%}
+.e2{top:14%;right:14%}
+.e3{bottom:18%;left:20%}
+.e4{bottom:8%;right:22%}
+@keyframes brilha{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+@media (prefers-reduced-motion:reduce){.estrela{animation:none;opacity:.7}}
+
+/* ============ TERMINAL: código verde neon digitando e apagando ============ */
+.terminal{
+  position:relative;z-index:1;display:inline-block;min-height:1.6em;
+  font-family:"Courier New",ui-monospace,monospace;font-size:clamp(19px,3.4vw,32px);
+  color:#39ff6a;text-shadow:0 0 6px rgba(57,255,106,.85),0 0 18px rgba(57,255,106,.5);
+  letter-spacing:.02em;
+}
+.terminal .cursor{display:inline-block;margin-left:2px;animation:pisca 1s steps(1) infinite}
+@keyframes pisca{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.terminal .cursor{animation:none}}
 footer{padding:26px var(--pad);font-size:13px;color:var(--ink-soft);text-align:center;border-top:1px solid var(--line)}
 
 /* ============ VOLTAR AO TOPO ============
@@ -215,7 +242,7 @@ footer{padding:26px var(--pad);font-size:13px;color:var(--ink-soft);text-align:c
 </nav>
 
 <header class="hero" id="topo">
-  <span class="status"><i></i>São Paulo, aberta a projetos</span>
+  <span class="status"><i></i>Online</span>
   <h1 id="nome"><span>Jéssica</span><span>Maciel</span></h1>
   <p>Desenvolvo interfaces, monto landing pages e faço colagens. Aqui fica o que eu construo e o que me inspira a construir.</p>
   <div class="btns">
@@ -250,16 +277,18 @@ footer{padding:26px var(--pad);font-size:13px;color:var(--ink-soft);text-align:c
       <button aria-pressed="false" data-f="Aconchego">Aconchego</button>
     </div>
     <div class="pins" id="pins"></div>
-    <blockquote class="revela">Uma frase sua sobre como você enxerga design.</blockquote>
+    <blockquote class="revela">Follow me to nowhere.</blockquote>
   </section>
 
   <section id="contato">
-    <h2 class="revela">Vamos criar<br>alguma coisa?</h2>
-    <a class="mail" href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a>
+    <div class="estrelas" aria-hidden="true">
+      <span class="estrela e1">✦</span><span class="estrela e2">✧</span>
+      <span class="estrela e3">✦</span><span class="estrela e4">✧</span>
+    </div>
+    <div class="terminal" aria-hidden="true"><span id="typeCode"></span><span class="cursor">▌</span></div>
     <div class="btns">
-      <a class="btn ghost" href="#">LinkedIn</a>
-      <a class="btn ghost" href="#">GitHub</a>
-      <a class="btn ghost" href="#">Behance</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/jessicamaciels/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/jemacieldev" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
 </main>
@@ -445,6 +474,39 @@ if(!calmo){
 }
 addEventListener("resize", montaMural);
 montaMural();
+
+/* ============ TERMINAL: digita, pausa, apaga, próxima linha ============ */
+const linhasCodigo = [
+  "Error: perfeição não encontrada",
+  "404 Not Found",
+  "Uncaught TypeError",
+  "#D60270 #9B4F96 #0038A8",
+  "SyntaxError: unexpected token",
+  "npm ERR! code ELIFECYCLE",
+  "01101010 01101101",
+  "Segmentation fault (core dumped)"
+];
+const elCodigo = document.getElementById("typeCode");
+if(elCodigo){
+  let i = 0;
+  function digitar(linha, pos, cb){
+    elCodigo.textContent = linha.slice(0, pos);
+    if(pos < linha.length) setTimeout(()=>digitar(linha, pos+1, cb), 45);
+    else setTimeout(cb, 1400);
+  }
+  function apagar(linha, pos, cb){
+    elCodigo.textContent = linha.slice(0, pos);
+    if(pos > 0) setTimeout(()=>apagar(linha, pos-1, cb), 22);
+    else setTimeout(cb, 350);
+  }
+  function loop(){
+    const linha = linhasCodigo[i % linhasCodigo.length];
+    i++;
+    if(calmo){ elCodigo.textContent = linha; return; } // sem animação: mostra uma linha fixa
+    digitar(linha, 0, ()=>apagar(linha, linha.length, loop));
+  }
+  loop();
+}
 
 /* Títulos se revelam e a nav marca a seção atual */
 const obs = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visivel"); obs.unobserve(e.target);} }),{threshold:.3});
