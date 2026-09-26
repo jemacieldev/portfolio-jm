@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-25T14:32:00Z",
+  "atualizado_em": "2026-09-26T13:42:11Z",
   "falhas": [],
   "pins": [
     {
@@ -35,20 +35,20 @@
     {
       "categoria": "Unhada",
       "titulo": "",
-      "imagem": "https://i.pinimg.com/236x/7e/78/07/7e780795faa169bb28d04f0d1f8bdae8.jpg",
-      "link": "https://br.pinterest.com/pin/702420873179140994/"
-    },
-    {
-      "categoria": "Unhada",
-      "titulo": "",
       "imagem": "https://i.pinimg.com/236x/d2/fb/a1/d2fba190f96d7efc9eb58a98508e9586.jpg",
       "link": "https://br.pinterest.com/pin/702420873180295258/"
     },
     {
       "categoria": "Unhada",
       "titulo": "",
-      "imagem": "https://i.pinimg.com/236x/bd/ff/ad/bdffad9fd6835815f0820f369cd0cc79.jpg",
-      "link": "https://br.pinterest.com/pin/702420873179032402/"
+      "imagem": "https://i.pinimg.com/236x/7e/78/07/7e780795faa169bb28d04f0d1f8bdae8.jpg",
+      "link": "https://br.pinterest.com/pin/702420873179140994/"
+    },
+    {
+      "categoria": "Unhada",
+      "titulo": "",
+      "imagem": "https://i.pinimg.com/236x/32/75/3d/32753db14e1198ae6fc751c26760400d.jpg",
+      "link": "https://br.pinterest.com/pin/702420873179976331/"
     },
     {
       "categoria": "Unhada",
@@ -59,8 +59,8 @@
     {
       "categoria": "Unhada",
       "titulo": "",
-      "imagem": "https://i.pinimg.com/236x/5e/a3/25/5ea3256e0879594ee15f4759928c69de.jpg",
-      "link": "https://br.pinterest.com/pin/702420873180011640/"
+      "imagem": "https://i.pinimg.com/236x/bd/ff/ad/bdffad9fd6835815f0820f369cd0cc79.jpg",
+      "link": "https://br.pinterest.com/pin/702420873179032402/"
     },
     {
       "categoria": "Aconchego",
@@ -95,6 +95,12 @@
     {
       "categoria": "Aconchego",
       "titulo": "",
+      "imagem": "https://i.pinimg.com/236x/63/f2/7f/63f27fb7f7bdca66f856574351756422.jpg",
+      "link": "https://br.pinterest.com/pin/702420873180079945/"
+    },
+    {
+      "categoria": "Aconchego",
+      "titulo": "",
       "imagem": "https://i.pinimg.com/236x/86/c1/84/86c18437efabaa9b5a2fe088ae81fbbf.jpg",
       "link": "https://br.pinterest.com/pin/702420873162709366/"
     },
@@ -107,20 +113,14 @@
     {
       "categoria": "Aconchego",
       "titulo": "",
-      "imagem": "https://i.pinimg.com/236x/63/f2/7f/63f27fb7f7bdca66f856574351756422.jpg",
-      "link": "https://br.pinterest.com/pin/702420873180079945/"
-    },
-    {
-      "categoria": "Aconchego",
-      "titulo": "",
       "imagem": "https://i.pinimg.com/236x/8f/89/ce/8f89ce136c03c828163aa5a095469cab.jpg",
       "link": "https://br.pinterest.com/pin/702420873167723958/"
     },
     {
       "categoria": "Aconchego",
       "titulo": "",
-      "imagem": "https://i.pinimg.com/236x/b7/a1/d6/b7a1d65984a3311c5a4bc2b77d99a5d3.jpg",
-      "link": "https://br.pinterest.com/pin/702420873169861093/"
+      "imagem": "https://i.pinimg.com/236x/84/31/30/843130713b1cbb0b59f97e88fd4eb915.jpg",
+      "link": "https://br.pinterest.com/pin/702420873169861048/"
     }
   ]
 }
