@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-26T18:54:41Z",
+  "atualizado_em": "2026-11-27T18:47:10Z",
   "falhas": [],
   "pins": [
     {
@@ -77,6 +77,12 @@
     {
       "categoria": "Aconchego",
       "titulo": "",
+      "imagem": "https://i.pinimg.com/236x/95/ff/37/95ff37639172eb3929913303a2370b0c.jpg",
+      "link": "https://br.pinterest.com/pin/e1_AfqPShy5WuT_3gVukXERqn2fY2aA0j-ayDsRMUB0yq15MxQNUaa1/"
+    },
+    {
+      "categoria": "Aconchego",
+      "titulo": "",
       "imagem": "https://i.pinimg.com/236x/23/56/95/2356958035692f6e785d46dadda7f24b.jpg",
       "link": "https://br.pinterest.com/pin/e1_AfqPShzpJdhkkXu7_HVa90sm3nqelv2x-IC5sk9V-PmfH60_iR-y/"
     },
@@ -115,12 +121,6 @@
       "titulo": "",
       "imagem": "https://i.pinimg.com/236x/ee/79/fd/ee79fdfdb0de339da05c6e0edc2f49b3.jpg",
       "link": "https://br.pinterest.com/pin/e1_AfqPShxcaFQLtDIxItU2belMHF7Vk7BMQjruAChHrk5S8Q3bvfnF/"
-    },
-    {
-      "categoria": "Aconchego",
-      "titulo": "Casinha • Instagram",
-      "imagem": "https://i.pinimg.com/236x/d8/0c/7b/d80c7b33ed01494ed38e82e0601dbc9c.jpg",
-      "link": "https://br.pinterest.com/pin/e1_AfqPShyUxYn4rSpgbmeepY70yTu20_nrt2JA_YC0zWUhiDmYiQbW/"
     }
   ]
 }
